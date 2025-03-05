@@ -135,7 +135,10 @@ describe('img-src directive', () => {
           styler,
         );
       } else {
-        expect(imgEl).toHaveAttribute('src', 'https://dummyimage.com/300x300/c72538/ffffff.png');
+        expect(imgEl).toHaveAttribute(
+          'src',
+          'https://dummyimage.com/300x300/c72538/ffffff.png',
+        );
 
         let url = 'https://dummyimage.com/700x400/258cc7/fff.png';
         fixture.componentInstance.defaultSrc = url;
