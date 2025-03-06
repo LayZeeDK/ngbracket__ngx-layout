@@ -71,7 +71,7 @@ describe('align directive', () => {
         return;
       }
 
-      expectNativeEl(fixture).toHaveStyle(
+      expectNativeEl(fixture).toHaveInlineStyle(
         { 'justify-self': 'stretch' },
         styler,
       );
@@ -85,7 +85,7 @@ describe('align directive', () => {
           return;
         }
 
-        expectNativeEl(fixture).toHaveStyle(
+        expectNativeEl(fixture).toHaveInlineStyle(
           extendObject({ 'justify-self': 'start' }, COLUMN_DEFAULT),
           styler,
         );
@@ -97,7 +97,7 @@ describe('align directive', () => {
           return;
         }
 
-        expectNativeEl(fixture).toHaveStyle(
+        expectNativeEl(fixture).toHaveInlineStyle(
           extendObject({ 'justify-self': 'center' }, COLUMN_DEFAULT),
           styler,
         );
@@ -109,7 +109,7 @@ describe('align directive', () => {
           return;
         }
 
-        expectNativeEl(fixture).toHaveStyle(
+        expectNativeEl(fixture).toHaveInlineStyle(
           extendObject({ 'justify-self': 'end' }, COLUMN_DEFAULT),
           styler,
         );
@@ -121,7 +121,7 @@ describe('align directive', () => {
           return;
         }
 
-        expectNativeEl(fixture).toHaveStyle(
+        expectNativeEl(fixture).toHaveInlineStyle(
           extendObject({ 'justify-self': 'stretch' }, COLUMN_DEFAULT),
           styler,
         );
@@ -133,7 +133,7 @@ describe('align directive', () => {
           return;
         }
 
-        expectNativeEl(fixture).toHaveStyle(
+        expectNativeEl(fixture).toHaveInlineStyle(
           extendObject({ 'justify-self': 'stretch' }, COLUMN_DEFAULT),
           styler,
         );
@@ -148,7 +148,7 @@ describe('align directive', () => {
           return;
         }
 
-        expectNativeEl(fixture).toHaveStyle(
+        expectNativeEl(fixture).toHaveInlineStyle(
           extendObject(ROW_DEFAULT, { 'align-self': 'start' }),
           styler,
         );
@@ -160,7 +160,7 @@ describe('align directive', () => {
           return;
         }
 
-        expectNativeEl(fixture).toHaveStyle(
+        expectNativeEl(fixture).toHaveInlineStyle(
           extendObject(ROW_DEFAULT, { 'align-self': 'center' }),
           styler,
         );
@@ -172,7 +172,7 @@ describe('align directive', () => {
           return;
         }
 
-        expectNativeEl(fixture).toHaveStyle(
+        expectNativeEl(fixture).toHaveInlineStyle(
           extendObject(ROW_DEFAULT, { 'align-self': 'end' }),
           styler,
         );
@@ -184,7 +184,7 @@ describe('align directive', () => {
           return;
         }
 
-        expectNativeEl(fixture).toHaveStyle(
+        expectNativeEl(fixture).toHaveInlineStyle(
           extendObject(ROW_DEFAULT, { 'align-self': 'stretch' }),
           styler,
         );
@@ -200,7 +200,7 @@ describe('align directive', () => {
         }
 
         fixture.componentInstance.alignBy = 'center end';
-        expectNativeEl(fixture).toHaveStyle(
+        expectNativeEl(fixture).toHaveInlineStyle(
           {
             'justify-self': 'center',
             'align-self': 'end',
@@ -209,10 +209,10 @@ describe('align directive', () => {
         );
 
         fixture.componentInstance.alignBy = 'invalid invalid';
-        expectNativeEl(fixture).toHaveStyle(DEFAULT_ALIGNS, styler);
+        expectNativeEl(fixture).toHaveInlineStyle(DEFAULT_ALIGNS, styler);
 
         fixture.componentInstance.alignBy = '';
-        expectNativeEl(fixture).toHaveStyle(DEFAULT_ALIGNS, styler);
+        expectNativeEl(fixture).toHaveInlineStyle(DEFAULT_ALIGNS, styler);
       });
     });
   });
@@ -227,7 +227,7 @@ describe('align directive', () => {
 
       mediaController.activate('md');
 
-      expectNativeEl(fixture).toHaveStyle(
+      expectNativeEl(fixture).toHaveInlineStyle(
         {
           'justify-self': 'center',
           'align-self': 'center',
@@ -245,7 +245,7 @@ describe('align directive', () => {
         return;
       }
 
-      expectNativeEl(fixture).toHaveStyle(
+      expectNativeEl(fixture).toHaveInlineStyle(
         {
           'justify-self': 'center',
           'align-self': 'center',
@@ -255,7 +255,7 @@ describe('align directive', () => {
 
       mediaController.activate('md');
 
-      expectNativeEl(fixture).toHaveStyle(
+      expectNativeEl(fixture).toHaveInlineStyle(
         {
           'justify-self': 'end',
           'align-self': 'stretch',
@@ -276,7 +276,7 @@ describe('align directive', () => {
         return;
       }
 
-      expectNativeEl(fixture).toHaveStyle(
+      expectNativeEl(fixture).toHaveInlineStyle(
         {
           'justify-self': 'center',
           'align-self': 'stretch',
@@ -286,7 +286,7 @@ describe('align directive', () => {
 
       mediaController.activate('md');
 
-      expectNativeEl(fixture).toHaveStyle(
+      expectNativeEl(fixture).toHaveInlineStyle(
         {
           'justify-self': 'end',
           'align-self': 'stretch',
@@ -296,7 +296,7 @@ describe('align directive', () => {
 
       mediaController.activate('xs');
 
-      expectNativeEl(fixture).toHaveStyle(
+      expectNativeEl(fixture).toHaveInlineStyle(
         {
           'justify-self': 'center',
           'align-self': 'stretch',
@@ -320,7 +320,7 @@ describe('align directive', () => {
 
       mediaController.useOverlaps = true;
 
-      expectNativeEl(fixture).toHaveStyle(
+      expectNativeEl(fixture).toHaveInlineStyle(
         {
           'justify-self': 'start',
         },
@@ -328,7 +328,7 @@ describe('align directive', () => {
       );
 
       mediaController.activate('xs');
-      expectNativeEl(fixture).toHaveStyle(
+      expectNativeEl(fixture).toHaveInlineStyle(
         {
           'justify-self': 'start',
         },
@@ -336,7 +336,7 @@ describe('align directive', () => {
       );
 
       mediaController.activate('md');
-      expectNativeEl(fixture).toHaveStyle(
+      expectNativeEl(fixture).toHaveInlineStyle(
         {
           'justify-self': 'center',
         },
@@ -345,7 +345,7 @@ describe('align directive', () => {
 
       // Should fallback to value for 'gt-xs' or default
       mediaController.activate('lg', true);
-      expectNativeEl(fixture).toHaveStyle(
+      expectNativeEl(fixture).toHaveInlineStyle(
         {
           'justify-self': 'end',
         },
@@ -353,7 +353,7 @@ describe('align directive', () => {
       );
 
       mediaController.activate('xs');
-      expectNativeEl(fixture).toHaveStyle(
+      expectNativeEl(fixture).toHaveInlineStyle(
         {
           'justify-self': 'start',
         },
@@ -362,7 +362,7 @@ describe('align directive', () => {
 
       // Should fallback to value for 'gt-xs' or default
       mediaController.activate('xl', true);
-      expectNativeEl(fixture).toHaveStyle(
+      expectNativeEl(fixture).toHaveInlineStyle(
         {
           'justify-self': 'end',
         },

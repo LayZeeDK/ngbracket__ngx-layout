@@ -82,7 +82,7 @@ describe('grid columns parent directive', () => {
         return;
       }
 
-      expectNativeEl(fixture).toHaveStyle(
+      expectNativeEl(fixture).toHaveInlineStyle(
         {
           display: 'grid',
           'grid-template-columns': '100px 1fr',
@@ -108,7 +108,7 @@ describe('grid columns parent directive', () => {
       // TODO(CaerusKaru): Firefox has an issue with auto tracks,
       // caused by rachelandrew/gridbugs#1
       if (!platform.FIREFOX) {
-        expectNativeEl(fixture).toHaveStyle(
+        expectNativeEl(fixture).toHaveInlineStyle(
           {
             display: 'grid',
             'grid-auto-columns': '100px 1fr auto',
@@ -132,7 +132,7 @@ describe('grid columns parent directive', () => {
         return;
       }
 
-      expectNativeEl(fixture).toHaveStyle(
+      expectNativeEl(fixture).toHaveInlineStyle(
         {
           display: 'inline-grid',
           'grid-template-columns': '100px 1fr',
@@ -151,7 +151,7 @@ describe('grid columns parent directive', () => {
         return;
       }
 
-      expectNativeEl(fixture).toHaveStyle(
+      expectNativeEl(fixture).toHaveInlineStyle(
         {
           display: 'grid',
           'grid-template-columns': '50px 1fr',
@@ -161,7 +161,7 @@ describe('grid columns parent directive', () => {
 
       fixture.componentInstance.cols = '100px 1fr';
 
-      expectNativeEl(fixture).toHaveStyle(
+      expectNativeEl(fixture).toHaveInlineStyle(
         {
           display: 'grid',
           'grid-template-columns': '100px 1fr',
@@ -183,7 +183,7 @@ describe('grid columns parent directive', () => {
         return;
       }
 
-      expectNativeEl(fixture).toHaveStyle(
+      expectNativeEl(fixture).toHaveInlineStyle(
         {
           display: 'grid',
           'grid-template-columns': '100px 1fr',
@@ -192,7 +192,7 @@ describe('grid columns parent directive', () => {
       );
 
       mediaController.activate('xs');
-      expectNativeEl(fixture).toHaveStyle(
+      expectNativeEl(fixture).toHaveInlineStyle(
         {
           display: 'grid',
           'grid-template-columns': '50px 1fr',
@@ -201,7 +201,7 @@ describe('grid columns parent directive', () => {
       );
 
       mediaController.activate('md');
-      expectNativeEl(fixture).toHaveStyle(
+      expectNativeEl(fixture).toHaveInlineStyle(
         {
           display: 'grid',
           'grid-template-columns': '100px 1fr',

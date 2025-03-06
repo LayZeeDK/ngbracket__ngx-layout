@@ -48,7 +48,10 @@ describe('styler', () => {
       componentWithTemplate(`
         <div></div>
       `);
-      expectNativeEl(fixture).not.toHaveStyle({ display: 'block' }, styler);
+      expectNativeEl(fixture).not.toHaveInlineStyle(
+        { display: 'block' },
+        styler,
+      );
     });
 
     it('should find to "display" for inline style <div></div>', () => {
