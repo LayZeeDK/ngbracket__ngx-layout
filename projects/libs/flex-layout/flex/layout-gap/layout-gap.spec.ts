@@ -1,3 +1,4 @@
+import { isPlatformBrowser } from '@angular/common';
 /**
  * @license
  * Copyright Google LLC All Rights Reserved.
@@ -263,7 +264,10 @@ describe('layout-gap directive', () => {
         nodes = queryFor(fixture, '[fxFlex]');
         expect(nodes.length).toEqual(3);
 
-        if (typeof MutationObserver !== 'undefined') {
+        if (
+          isPlatformBrowser(platformId) &&
+          typeof MutationObserver !== 'undefined'
+        ) {
           expectEl(nodes[0]).toHaveInlineStyle(
             { 'margin-right': '13px' },
             styler,
@@ -309,7 +313,10 @@ describe('layout-gap directive', () => {
         nodes = queryFor(fixture, '[fxFlex]');
 
         expect(nodes.length).toEqual(1);
-        if (typeof MutationObserver !== 'undefined') {
+        if (
+          isPlatformBrowser(platformId) &&
+          typeof MutationObserver !== 'undefined'
+        ) {
           expectEl(nodes[0]).not.toHaveInlineStyle(
             { 'margin-right': '13px' },
             styler,
