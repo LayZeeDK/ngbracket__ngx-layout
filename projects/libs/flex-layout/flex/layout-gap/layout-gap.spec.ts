@@ -8,7 +8,11 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import { DIR_DOCUMENT } from '@angular/cdk/bidi';
-import { CommonModule, isPlatformServer } from '@angular/common';
+import {
+  CommonModule,
+  isPlatformBrowser,
+  isPlatformServer,
+} from '@angular/common';
 import { Component, Injectable, OnInit, PLATFORM_ID } from '@angular/core';
 import {
   ComponentFixture,
@@ -236,7 +240,7 @@ describe('layout-gap directive', () => {
         nodes = queryFor(fixture, '[fxFlex]');
         expect(nodes.length).toEqual(3);
 
-        if (typeof MutationObserver !== 'undefined') {
+        if (isPlatformBrowser(platformId) && typeof MutationObserver !== 'undefined') {
           expectEl(nodes[0]).toHaveInlineStyle({ 'margin-right': '13px' }, styler);
           expectEl(nodes[1]).toHaveInlineStyle({ 'margin-right': '13px' }, styler);
           expectEl(nodes[2]).not.toHaveInlineStyle(
@@ -273,7 +277,7 @@ describe('layout-gap directive', () => {
         nodes = queryFor(fixture, '[fxFlex]');
 
         expect(nodes.length).toEqual(1);
-        if (typeof MutationObserver !== 'undefined') {
+        if (isPlatformBrowser(platformId) && typeof MutationObserver !== 'undefined') {
           expectEl(nodes[0]).not.toHaveInlineStyle(
             { 'margin-right': '13px' },
             styler,
