@@ -38,7 +38,8 @@
     "update": "nx migrate latest",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
-    "nx": "nx"
+    "nx": "nx",
+    "playwright:install": "playwright install --with-deps"
   },
   "private": true,
   "requiredAngularVersion": ">=20.0.0",
