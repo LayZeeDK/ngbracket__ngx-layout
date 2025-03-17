@@ -912,7 +912,7 @@ describe('layout-gap directive', () => {
   });
 });
 
-@Injectable({ providedIn: FlexModule })
+@Injectable()
 export class MockLayoutGapStyleBuilder extends StyleBuilder {
   override shouldCache = false;
   buildStyles(_input: string) {
