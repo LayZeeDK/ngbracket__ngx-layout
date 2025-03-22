@@ -57,8 +57,7 @@ const DIRECTIONS = ['row', 'row-reverse', 'column', 'column-reverse'];
         </div>
       </div>
     </mat-card-content>
-    <mat-card-footer class="bottomPad">
-    </mat-card-footer>
+    <mat-card-footer class="bottomPad"> </mat-card-footer>
   </mat-card>`,
   styles: [
     `
