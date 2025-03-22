@@ -20,5 +20,8 @@ export default defineConfig({
       ),
     },
     fileParallelism: isCi ? false : undefined, // Prevent hanging tests timing out in GitHub Actions runners
+    sequence: isCi ? {
+      shuffle: true,
+    } : undefined,
   },
 });
