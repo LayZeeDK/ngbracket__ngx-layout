@@ -2,6 +2,8 @@
 import { defineConfig } from 'vite';
 import { config as baseConfig } from './vite.config.mjs';
 
+const isCi = !!process.env['CI'];
+
 export default defineConfig({
   ...baseConfig,
   cacheDir: baseConfig.cacheDir.replace('/.vite/', '/.vite/ssr/'),
@@ -17,5 +19,6 @@ export default defineConfig({
         '/coverage/ssr/',
       ),
     },
+    fileParallelism: isCi ? false : undefined, // Prevent hanging tests timing out in GitHub Actions runners
   },
 });
