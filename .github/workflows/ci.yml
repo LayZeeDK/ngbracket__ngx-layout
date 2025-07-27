@@ -83,24 +83,24 @@ jobs:
             browser-version: latest
             playwright-version: latest
         include:
-          # Match Angular browser support when Angular 19 was released
+          # Match Angular 20 "widely available" Baseline
           - browser: chromium
-            browser-version: 130 # Previous major Chrome version when Angular 19 was released
-            playwright-version: 1.48.2
+            browser-version: 107
+            playwright-version: 1.27.1
           - browser: firefox
-            browser-version: 130 # Firefox 131 was the previous major version when Angular 19 was released but this is not supported by any Playwright version
-            playwright-version: 1.48.2
+            browser-version: 104
+            playwright-version: 1.26.1
           - browser: firefox
-            browser-version: esr-115 # Old ESR when Firefox 131 was released
-            playwright-version: 1.37.1
+            browser-version: esr-91 # Old ESR when Firefox 104 was released
+            playwright-version: 1.14.1
           - browser: firefox
-            browser-version: esr-128 # New ESR when Firefox 131 was released
-            playwright-version: 1.46.1
+            browser-version: esr-102 # New ESR when Firefox 104 was released
+            playwright-version: 1.24.2
           - browser: firefox
             browser-version: 134 # Firefox 135 and Playwright 1.51.0 (latest) times out in GitHub Actions
             playwright-version: 1.50.1
           - browser: webkit
-            browser-version: 16 # Previous major Safari version when Angular 19 was released
+            browser-version: 16
             playwright-version: 1.45.3
     steps:
       - name: Checkout code
