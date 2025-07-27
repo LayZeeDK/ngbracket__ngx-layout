@@ -34,7 +34,9 @@
       "!{projectRoot}/**/*.spec.[jt]s",
       "!{projectRoot}/karma.conf.js",
       "!{projectRoot}/src/test.[jt]s",
-      "!{projectRoot}/test.[jt]s"
+      "!{projectRoot}/test.[jt]s",
+      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+      "!{projectRoot}/src/test-setup.[jt]s"
     ]
   },
   "generators": {
@@ -103,5 +105,21 @@
     "@schematics/angular:resolver": {
       "typeSeparator": "."
     }
-  }
+  },
+  "plugins": [
+    {
+      "plugin": "@nx/vite/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "testTargetName": "test",
+        "serveTargetName": "serve",
+        "devTargetName": "dev",
+        "previewTargetName": "preview",
+        "serveStaticTargetName": "serve-static",
+        "typecheckTargetName": "typecheck",
+        "buildDepsTargetName": "build-deps",
+        "watchDepsTargetName": "watch-deps"
+      }
+    }
+  ]
 }
